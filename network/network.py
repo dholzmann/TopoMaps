@@ -163,7 +163,6 @@ class SOM(LearnableNetwork):
         for c, node in enumerate(self.network.nodes):
             update = self.learning_rate * self.neighbour_func(self.get_idx(n), self.get_idx(c)) * (x - node)
             self.network.nodes[c] += update
-            #print(self.learning_rate)
 
     def decrease_learning_rate(self):
         if self.learning_rate + self.lr_step <= self.learning_rate_final:
